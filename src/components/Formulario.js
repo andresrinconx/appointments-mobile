@@ -51,8 +51,8 @@ const Formulario = ({
     if([paciente, propietario, email, fecha, sintomas].includes('') ) { // si en este arreglo se incluye un '', devuelve true
       
       Alert.alert(
-        'Error', // Titulo
-        'Todos los campos son obligatorios', // mensaje
+        'Ups!', // Titulo
+        'All fields are required', // mensaje
         // [{text: 'OK'}, {text: 'Cancelar'}] // botones
       )
       return;
@@ -101,12 +101,12 @@ const Formulario = ({
     >
       <SafeAreaView style={styles.contenido}>
         <ScrollView>
-          <Text style={styles.titulo}>{pacienteObj.id ? 'Editar' : 'Nueva'} {''}
+          <Text style={styles.titulo}>{pacienteObj.id ? 'Edit' : 'New'} {''}
             <Text style={styles.tituloBold}>Cita</Text>
           </Text>
 
           <Pressable style={styles.btnCancelar}
-            onLongPress={() => {
+            onPress={() => {
               cerrarModal()
               setPacienteApp({})
               setPaciente('')
@@ -118,15 +118,15 @@ const Formulario = ({
               setSintomas('')
             }}
           >
-            <Text style={styles.btnCancelarTexto}>Cancelar</Text>
+            <Text style={styles.btnCancelarTexto}>Cancel</Text>
           </Pressable>
 
 
           <View style={styles.campo}>
-            <Text style={styles.label}>Nombre Paciente</Text>
+            <Text style={styles.label}>Patient Name</Text>
             <TextInput
               style={styles.input}
-              placeholder='Nombre Paciente'
+              placeholder='Patient Name'
               placeholderTextColor='#666'
               value={paciente}
               onChangeText={setPaciente} // la funcion onChangeText se llama cuando el texto del input cambia
@@ -134,10 +134,10 @@ const Formulario = ({
           </View>
 
           <View style={styles.campo}>
-            <Text style={styles.label}>Nombre Propietario</Text>
+            <Text style={styles.label}>Owner Name</Text>
             <TextInput
               style={styles.input}
-              placeholder='Nombre Propietario'
+              placeholder='Owner Name'
               placeholderTextColor='#666'
               value={propietario}
               onChangeText={setPropietario}
@@ -145,10 +145,10 @@ const Formulario = ({
           </View>
 
           <View style={styles.campo}>
-            <Text style={styles.label}>Email Propietario</Text>
+            <Text style={styles.label}>Owner Email</Text>
             <TextInput
               style={styles.input}
-              placeholder='Email Propietario'
+              placeholder='Owner Email'
               placeholderTextColor='#666'
               keyboardType='email-address'
               value={email}
@@ -157,10 +157,10 @@ const Formulario = ({
           </View>
 
           <View style={styles.campo}>
-            <Text style={styles.label}>Telefono Propietario</Text>
+            <Text style={styles.label}>Owner Phone Number</Text>
             <TextInput
               style={styles.input}
-              placeholder='Telefono Propietario'
+              placeholder='Owner Phone Number'
               placeholderTextColor='#666'
               keyboardType='number-pad'
               value={telefono}
@@ -170,22 +170,22 @@ const Formulario = ({
           </View>
 
           <View style={styles.campo}>
-            <Text style={styles.label}>Fecha Alta</Text>
+            <Text style={styles.label}>High Date</Text>
 
             <View style={styles.fechaContenedor}>
               <DatePicker
                 date={fecha}
-                locale='es'
+                locale='en'
                 onDateChange={ (date) => setFecha(date)} // date se pasa automaticamente con el DatePicker
               />
             </View>
           </View>
           
           <View style={styles.campo}>
-            <Text style={styles.label}>Sintomas</Text>
+            <Text style={styles.label}>Symptoms</Text>
             <TextInput
               style={[styles.input, styles.sintomasInput]}
-              placeholder='Sintomas paciente'
+              placeholder='Patient Symptoms'
               placeholderTextColor='#666'
               value={sintomas}
               onChangeText={setSintomas}
@@ -198,7 +198,7 @@ const Formulario = ({
             style={styles.btnNuevaCita}
             onPress={handleCita}
           >
-            <Text style={styles.btnNuevaCitaTexto}>{pacienteObj.id ? 'Editar' : 'Agregar'} Paciente</Text>
+            <Text style={styles.btnNuevaCitaTexto}>{pacienteObj.id ? 'Edit' : 'Add'} Patient</Text>
           </Pressable>
 
         </ScrollView>

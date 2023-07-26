@@ -29,11 +29,11 @@ const App = () => {
 
   const pacienteEliminar = id => {
     Alert.alert(
-      'Deseas eliminar este paciente?',
-      'Un paciente eliminado no se puede recuperar',
+      'Do you want to delete this patient?',
+      'A deleted patient cannot be recovered',
       [
-        { text: 'Cancelar' },
-        { text: 'Si, Eliminar', onPress: () => {
+        { text: 'Cancel' },
+        { text: 'Yes, Delete', onPress: () => {
           const pacientesActualizados = pacientes.filter( pacientesState => pacientesState.id !== id )
           setPacientes(pacientesActualizados)
         }}
@@ -47,8 +47,8 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.titulo}>Administrador de {''}
-        <Text style={styles.tituloBold}>Citas</Text>
+      <Text style={styles.titulo}>Appointment {''}
+        <Text style={styles.tituloBold}>Manager</Text>
       </Text>
 
       
@@ -57,11 +57,11 @@ const App = () => {
         onPress={ () => setModalVisible(true) }
         style={styles.btnNuevaCita}
       >
-        <Text style={styles.btnTextoNuevaCita}>Nueva Cita</Text>
+        <Text style={styles.btnTextoNuevaCita}>New Appointment</Text>
       </Pressable>
 
       {pacientes.length === 0 ? // Devuelve el numero de elementos
-        <Text style={styles.noPacientes}>No hay pacientes aun</Text> : 
+        <Text style={styles.noPacientes}>No patients yet</Text> : 
         <FlatList
           style={styles.listado}
           data={pacientes} // Datos que va a renderizar, un arreglo de objetos (en este caso)

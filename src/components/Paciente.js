@@ -20,33 +20,33 @@ const Paciente = ({
 
   return (
     <Pressable
-      onLongPress={() => {
+      onPress={() => {
         setModalPaciente(true)
         setPaciente(item)
       }}
        // en cada iteracion se pasa el objeto correspondiente a la variable "paciente" que asigna setPaciente
     >
       <View style={styles.contenedor}>
-        <Text style={styles.label}>Paciente:</Text>
+        <Text style={styles.label}>Patient:</Text>
         <Text style={styles.texto}>{paciente}</Text>
         <Text style={styles.fecha}>{formatearFecha(fecha)}</Text>
 
         <View style={styles.contenedorBotones}>
           <Pressable 
               style={[styles.btn, styles.btnEditar]}
-              onLongPress={() => {
+              onPress={() => {
                   setModalVisible(true)
                   pacienteEditar(id)
               }}
           >
-              <Text style={styles.btnTexto}>Editar</Text>
+              <Text style={styles.btnTexto}>Edit</Text>
           </Pressable>
 
           <Pressable
             style={[styles.btn, styles.btnEliminar]}
-            onLongPress={ () => pacienteEliminar(id)}
+            onPress={ () => pacienteEliminar(id)}
           >
-              <Text style={styles.btnTexto}>Eliminar</Text>
+              <Text style={styles.btnTexto}>Delete</Text>
           </Pressable>
         </View>
       </View>

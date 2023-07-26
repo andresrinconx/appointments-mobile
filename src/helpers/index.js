@@ -8,6 +8,6 @@ export const formatearFecha = fecha => {
       day: 'numeric',
     };
 
-    return nuevaFecha.toLocaleDateString('es-ES', opciones)
+    return nuevaFecha.toLocaleDateString('en-US', opciones)
 
   }

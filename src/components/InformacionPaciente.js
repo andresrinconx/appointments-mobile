@@ -21,20 +21,20 @@ const InformacionPaciente = ({
         style={styles.contenedor}
     >
         <View>
-            <Text style={styles.titulo}>Informacion {''}
-                <Text style={styles.tituloBold}>Paciente</Text>
+            <Text style={styles.titulo}>Patient {''}
+                <Text style={styles.tituloBold}>Information</Text>
             </Text>
 
             <Pressable
                 style={styles.btnCerrar}
-                onLongPress={() => {
+                onPress={() => {
                     setModalPaciente(false)
                     setPaciente({})
                 }}
             >
                 <Text
                     style={styles.btnCerrarTexto}
-                >Cerrar</Text>
+                >Close</Text>
             </Pressable>
         </View>
 
@@ -42,12 +42,12 @@ const InformacionPaciente = ({
             style={styles.contenido}
         >
             <View style={styles.campo}>
-                <Text style={styles.label}>Nombre:</Text>
+                <Text style={styles.label}>Name:</Text>
                 <Text style={styles.valor}>{paciente}</Text>
             </View>
 
             <View style={styles.campo}>
-                <Text style={styles.label}>Propietario:</Text>
+                <Text style={styles.label}>Owner:</Text>
                 <Text style={styles.valor}>{propietario}</Text>
             </View>
 
@@ -57,17 +57,17 @@ const InformacionPaciente = ({
             </View>
 
             <View style={styles.campo}>
-                <Text style={styles.label}>Telefono:</Text>
+                <Text style={styles.label}>Phone Number:</Text>
                 <Text style={styles.valor}>{telefono}</Text>
             </View>
             
             <View style={styles.campo}>
-                <Text style={styles.label}>Fecha Alta:</Text>
+                <Text style={styles.label}>High Date:</Text>
                 <Text style={styles.valor}>{formatearFecha(fecha)}</Text>
             </View>
 
             <View style={styles.campo}>
-                <Text style={styles.label}>Sintomas:</Text>
+                <Text style={styles.label}>Symptoms:</Text>
                 <Text style={styles.valor}>{sintomas}</Text>
             </View>
 
